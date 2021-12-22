@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>EONET event tracker</title>
+        <meta name="description" content="This is a website that tracks and showcases natural events across the world">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="msapplication-TileColor" content="#3385FF">
+        <meta name="theme-color" content="#3385FF">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="site.webmanifest">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#3385FF">
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/screen.css">
+		<!-- <script defer src="./script/validation.js"></script> -->
+        <script defer src="./script/app.js"></script>
+        <script defer src="./script/dataHandler.js"></script>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    </head>
+    <body>
+        <section class="o-row o-row--lg o-row--login o-row--beta js-row">
+            <!-- Side navigation -->
+            <div class="sidenav js-sidenav">
+                <a class="menu-title">EONET</a>
+                <a class="menu-item">Filters</a>
+                <label class="menu-label" for="select1">
+                    Select amount of days
+                </label>
+                <span class="c-custom-select">
+                    <select class="c-input c-custom-select__input js-dropdown-days" class="" name="select1" id="select1">
+                        <option value="7">7</option>
+                        <option value="30">30</option>
+                        <option value="90">90</option>
+                        <option value="365">365</option>
+                    </select>
+                    <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7,10l5,5,5-5Z"/>
+                    </svg>
+                </span>
+                <label class="menu-label" for="select2">
+                    Select category
+                </label>
+                <span class="c-custom-select">
+                    <select class="c-input c-custom-select__input js-dropdown-categories" class="" name="select2" id="select2">
+                        <option value="all">All</option>
+                    </select>
+                    <svg class="c-custom-select__symbol" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M7,10l5,5,5-5Z"/>
+                    </svg>
+                </span>
+                
+            </div>
+            <!-- style = "padding-left: 16px;" class = "js-arrow arrow" -->
+            <span onclick="changeNav()">
+                <svg class="svg-icon js-arrow arrow" style="width: 4em; height: 4em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M670.293333 542.293333a42.666667 42.666667 0 0 0 8.96-14.08 42.666667 42.666667 0 0 0 0-32.426666 42.666667 42.666667 0 0 0-8.96-14.08l-128-128a42.666667 42.666667 0 0 0-60.586666 60.586666l55.466666 55.04H384a42.666667 42.666667 0 0 0 0 85.333334h153.173333l-55.466666 55.04a42.666667 42.666667 0 0 0 0 60.586666 42.666667 42.666667 0 0 0 60.586666 0zM938.666667 512a426.666667 426.666667 0 1 0-426.666667 426.666667 426.666667 426.666667 0 0 0 426.666667-426.666667zM170.666667 512a341.333333 341.333333 0 1 1 341.333333 341.333333 341.333333 341.333333 0 0 1-341.333333-341.333333z"  /></svg>            </span>
+            <div class="o-container u-max-width-xlg">
+                <form class="c-card" action="#">
+                    <div class="c-card__body">
+                        <div class="o-section">
+                            
+                            <h2>EONET event tracker</h2>
+                            <!-- Custom select -->
+                        </div>
+                        <div id="mapid" class = "o-section"></div> 
+                        <div class = "o-section is-invisible js-visibility"> 
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
