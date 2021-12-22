@@ -15,7 +15,7 @@ function initializeMap(){
 }
 
 const initializeMenu = function(){
-    handleData("https://eonet.sci.gsfc.nasa.gov/api/v3/categories", showCategories);
+    handleData("https://cors-anywhere.herokuapp.com/https://eonet.sci.gsfc.nasa.gov/api/v3/categories", showCategories);
 };
 
 const showData = function(jsonObject){
@@ -78,10 +78,10 @@ const listenToDropDownChange = function(){
 
 const getData = function(days,category){
     if(category == "all"){
-        handleData("https://eonet.sci.gsfc.nasa.gov/api/v3/events?days="+days, showData);
+        handleData("https://cors-anywhere.herokuapp.com/https://eonet.sci.gsfc.nasa.gov/api/v3/events?days="+days, showData);
     }else
     {
-        handleData("https://eonet.gsfc.nasa.gov/api/v3/categories/" + category + "?days="+days, showData);
+        handleData("https://cors-anywhere.herokuapp.com/https://eonet.gsfc.nasa.gov/api/v3/categories/" + category + "?days="+days, showData);
     }
     
 };
